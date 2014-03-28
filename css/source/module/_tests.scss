@@ -1,0 +1,26 @@
+.test-breakpoint {
+  &:before {
+    position: absolute;
+    display: inline-block;
+    content:"NoBp";
+    top:0;
+    line-height: 12px;
+    right:0;
+    background:rgba(0,0,0,0.6);
+    padding:3px 8px 3px 8px;
+    z-index:1000;
+    opacity:0.9;
+    border-radius:15px; 
+    color:#FF1111;
+     @include breakpoint(mobile) {
+      content:"mobile";
+    }
+    @include breakpoint(small) {
+      content:"sml";
+    }
+    @include breakpoint(wide) {
+      content:"lrg";
+    }
+
+  }
+}

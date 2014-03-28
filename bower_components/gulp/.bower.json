@@ -1,0 +1,14 @@
+{
+  "name": "gulp",
+  "homepage": "https://github.com/gulpjs/gulp",
+  "_release": "4618b32ef7",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4618b32ef719047c4c16d560849cc1ecc04cde8a"
+  },
+  "_source": "git://github.com/gulpjs/gulp.git",
+  "_target": "*",
+  "_originalSource": "gulp",
+  "_direct": true
+}

@@ -1,0 +1,162 @@
+form {
+  @extend %cleared;
+  width: 100%;
+  max-width: 1068px;
+  .is-invalid {
+    color: $color-form--error;
+    input, textarea, select {
+      border-left: 3px solid desaturate(lighten($color-form--error, 20), 50);
+      &:hover, &:focus {
+        border-right: 3px solid $color-form--error;
+      }
+    }
+  }
+  .invalid-message {
+    color: $color-form--error;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-left: 6px;
+  }
+  .fa--required { /** Required Asterisk Icon **/
+    display:none;
+    color: $color-form--error;
+    font-size: 11px;
+    vertical-align: middle;
+    opacity:0;
+  }
+}
+label{
+  font-family:$font-body;
+  display: inline-block;
+  text-align: left;
+  color:$color-ic--midlightgrey;
+  margin: 0;
+  width: 100%;
+  min-width: 200px;
+  position: relative;
+}
+label > div { // keeps error messages inline with label div
+  float: left;
+}
+input + div { // makes checkbox & radio labels wrap properly with input
+  float: none;
+}
+input + input {
+  margin-top: 10px;
+}
+#{$all-text-inputs}, select, textarea {
+  @include box-sizing(border-box);
+  border:1px solid $color-ic--superlightgrey;
+  border-right:3px solid $color-ic--superlightgrey;
+  border-radius: $border-radius--panel;
+  padding:8px 6px;
+  min-height:37px;
+  margin-top: 3px;
+  margin-bottom: 0;
+  background:lighten($color-ic--superlightgrey, 5);
+  box-shadow:rgba(0,0,0, 0.05)  0 2px 0px inset , rgba(255, 255, 255, 1.0) 0 1px 0px;
+  color:darken($color-ic--midlightgrey, 20);
+  font-weight:500;
+  text-shadow:rgba(255,255,255, 0.025) 0 1px 0; 
+  width: 100%;
+  @include transition (all 0.08s ease-in-out);
+  @include placeholder {
+    color:$color-ic--lightgrey;
+    font-style: italic;
+  }
+}
+input[type="checkbox"], input[type="radio"] {
+  float: left;
+}
+input[type="file"] {
+  margin: 3px 0px;
+}
+select {
+  height: 37px;
+  margin: 3px 0 0 0px;
+}
+
+//valid state
+label.is-valid {
+  .fa--required {
+    color:$color-btn--act;
+  }
+  #{$all-text-inputs}, select {
+    border-left: 5px solid desaturate(lighten($color-btn--act, 25),10);
+  }
+}
+.invalid-message {
+  opacity:0;
+  top:5px;
+  right:0;
+  position:absolute;
+  @include transition (all 0.08s ease-in-out);
+}
+// For demo, needs to be hidden until submit check
+label:hover, label:active, label:focus {
+  .invalid-message {
+    opacity:1.0;
+    top:0;
+  }
+}
+.is-required {
+  #{$all-text-inputs}, select {
+    border-left:5px solid $color-ic--red;
+  }
+}
+.is-invalid {
+  font-weight: $font-weight--bold;
+  #{$all-text-inputs}, select {
+    border-color:desaturate($color-ic--red,25);
+    &:before {
+      content: '!';
+      position: relative;
+
+    }
+  }
+}
+.is-pristine {
+    #{$all-text-inputs}, select {
+    border:1px solid $color-ic--superlightgrey;
+    border-left:5px solid $color-ic--superlightgrey;
+  }
+  &.is-required {
+    #{$all-text-inputs}, select {
+      border-left:5px solid lighten(desaturate($color-ic--yellow, 5), 10);
+    }
+  }
+}
+.is-pristine.is-required.is-valid {
+  #{$all-text-inputs}, select {
+    border-left: 5px solid desaturate(lighten($color-btn--act, 25),10);
+  }
+}
+ 
+.is-invalid-email {
+  position: relative;
+  &:before {
+    display: block;
+    content:"Invalid email";
+    position: absolute;
+    bottom:-19px;
+    height: 12px;
+    right:0;
+    font-size: 10px;
+    line-height: 12px;
+    padding:1px 3px;
+    color:$color-ic--white;
+    background: lighten(desaturate($color-ic--red, 25), 30); 
+    border-radius:0 $border-radius--panel 0 $border-radius--panel;
+  }
+  & + input[type="email"]{
+    border:1px solid lighten(desaturate($color-ic--red, 25), 30);
+  }
+}
+ //============== angular field validation classes
+
+input.ng-invalid-required {
+  @extend .is-required;
+}
+input.ng-invalid-email  {
+  // @extend .is-invalid-email; //hides the 'Invalid Email' blurb if its active, on CCP login
+}

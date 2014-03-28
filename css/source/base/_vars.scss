@@ -1,0 +1,55 @@
+$font-header:"Josefin Sans", sans-serif; //Similar to Gotham
+$font-body:"OPen Sans", sans-serif; //Similar to TodaySans
+$font-code:"Source Code Pro", sans-serif;
+
+$font-weight--light: 100;
+$font-weight--regular: 400;
+$font-weight--normal:$font-weight--regular;
+$font-weight--bold: 800;
+
+$half:49.5%;
+$third:33.33%;
+$quarter:25%;
+$gutter:30px;
+//=========================Incomm Colors
+  //===================Primary
+   $color-ic--red:#cc0033;
+   $color-ic--blue:#6699cc;
+   $color-ic--darkgrey:#333333;
+   $color-ic--middarkgrey:#666666;
+   $color-ic--midlightgrey:#999999;
+   $color-ic--lightgrey:#cccccc;
+   $color-ic--superlightgrey:#e7e7e8;
+   $color-ic--white:#ffffff;
+  //===================Tertiary
+   $color-ic--orange:#DE5A2E;
+   $color-ic--yellow:#DFAC44;
+
+// =========================== Credit Card Types
+$color-visa:#23288F;            //blue
+$color-mastercard:#CC7404;      //orange
+$color-americanexpress:#1BAA76; //blue-green
+// ===========================buttons
+$color-btn:#C0C0C0;
+$color-btn--error:rgb(240, 129, 60);
+$color-btn--act:#28AAD0; //#3D9998
+$color-btn--success:#5CC281;
+$color-btn--disabled:#D1D1D1;
+$line-height-btn:20px;
+
+$color-ic--WAT: rgb(252, 27, 144);
+// =========================== Form error
+$color-form--error: #b80a35; // deep, cool red
+// =========================== general UI panels
+$bgcolor-panel--light:lighten($color-ic--superlightgrey, 3); //rgb(166, 225, 236)
+
+$bgcolor-panel--act:rgb(100, 174, 249); // a nice blue
+$bgcolor-panel--success:rgb(164, 226, 157); // a happy green
+$bgcolor-panel--error:rgb(240, 129, 60); // a sad orange
+
+$border-radius--panel:3px;
+$border-radius--panel--giftcard: 8px;
+
+$box-shadow-color:rgba(0,0,0,0.09);
+$box-shadow--panel:$box-shadow-color 0 -3px 0px inset;
+

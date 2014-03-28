@@ -1,0 +1,25 @@
+{
+  "name": "Lauren Kodai",
+  "description": "",
+  "version": "0.0.1",
+  "author": "Lauren Kodai",
+  "private": true,
+  "devDependencies": {
+    "node-bourbon": "~1.0.0",
+    "grunt-contrib-sass": "~0.7.2",
+    "grunt-preprocess": "~4.0.0",
+    "gulp": "^3.5.5",
+    "gulp-util": "^2.2.14",
+    "gulp-notify": "^1.0.0-beta",
+    "gulp-sass": "^0.7.1",
+    "gulp-livereload": "^1.2.0",
+    "tiny-lr": "0.0.5",
+    "gulp-connect": "^1.0.7",
+    "gulp-mustache": "^0.2.0",
+    "gulp-file-include": "^0.2.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}

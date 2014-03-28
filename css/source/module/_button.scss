@@ -1,0 +1,154 @@
+$line-height-btn:20px !default;
+$box-shadow-color:rgba(0,0,0,0.15) !default;
+
+//base button class
+%btn {
+  display:inline-block;
+  text-align:center;
+  line-height:$line-height-btn;
+  vertical-align: middle;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: normal;
+  padding:8px 30px;
+  font-weight:800;
+  border:none;
+  border-radius:$border-radius--panel;
+  background:lighten($color-btn, 7);
+  box-shadow:$box-shadow--panel;
+}
+.btn--act{
+  @extend %btn;
+  color:$color-ic--white;
+  text-shadow:darken($color-ic--blue, 10) 0 1px 0;
+  background:$color-ic--blue;
+  &:hover, &:focus {
+    //text-shadow: $color-ic--lightgrey 0 -1px 0;
+    background:darken($color-ic--blue, 10);
+    color:$color-ic--superlightgrey; 
+  } 
+}
+.btn--success, .btn--add, .btn-primary.active {
+  @extend %btn;
+  color:$color-ic--white;
+  text-shadow:darken($color-btn--success, 10) 0 1px 0;
+  background:$color-btn--success;
+  &:hover, &:focus {
+    background:darken($color-btn--success, 10);
+    //     color:darken($color-ic--white, 10); 
+  } 
+}
+.btn--modify {
+  @extend %btn;
+  color:desaturate($color-btn--success, 20);
+  text-shadow:none;
+  font-weight: normal;
+  background: none;
+  box-shadow:none;
+  @include transition(all .08s ease-in-out);
+  &:hover, &:focus {
+    color:lighten($color-btn--success, 58);
+    text-shadow: 0 1px 0 darken(desaturate($color-btn--success, 30), 12); 
+    background:$color-btn--success;
+    @include transition(all .08s ease-in-out);
+  } 
+}
+.btn--warn {
+  @extend %btn;
+  color:lighten($color-ic--red, 45);
+  text-shadow:$color-ic--red 0 1px 0;
+  background:lighten($color-ic--red, 5);
+  &:hover, &:focus {
+    background:lighten($color-ic--red, 10);
+         color:lighten($color-ic--red, 58); 
+  } 
+}
+.btn--reset {
+  @extend %btn;
+  @extend .btn--modify;
+  color: $color-ic--red;
+  &:hover, &:focus {
+    color:$color-ic--white;
+    text-shadow: 0 1px 0 darken(desaturate($color-ic--red, 5), 12); 
+    background:desaturate($color-ic--red, 5);
+    @include transition(all .08s ease-in-out);
+  } 
+}
+.btn--cancel {
+  @extend %btn;
+  @extend .btn--modify;
+  background:none;
+  color:$color-ic--blue;
+  &:hover {
+    box-shadow: 0 0 2px $color-ic--blue;
+    background:rgba(255,255,255,0.34);
+  }
+}
+.btn--is-disabled, .btn[disabled] {
+  @extend %btn;
+  color:darken($color-btn--disabled, 5);
+  padding:8px 30px;
+  text-shadow:none;
+  background:lighten($color-btn--disabled, 5);
+  &:hover, &:focus, &:active {
+    background:lighten($color-btn--disabled, 5);
+    color:darken($color-btn--disabled, 5);
+    cursor:default;
+    } 
+  }               
+[disabled].btn--act {
+  text-shadow: none;
+}
+.btn--checkout {
+    @extend %btn;
+    background: lighten($color-ic--yellow, 7);
+    &:hover {
+        background: $color-ic--yellow;
+        color: black;
+        //box-shadow: $box-shadow-color 0 3px 0px inset;
+        text-decoration: underline;
+        border-bottom: none;
+    }
+    span {
+        font-family: $font-body; 
+    }
+}
+.btn--kill {
+  @extend %btn;
+  position: absolute;
+  background:none;
+  right:3px;
+  top:3px;
+  box-shadow:none;
+  padding:2px 4px;
+  margin:0;
+  color:$color-ic--midlightgrey;
+  @include transition(all .08s ease-in-out);
+  &:hover {
+    color:$color-ic--red;
+    font-size:17px;
+    background:none;
+    box-shadow:none;
+    text-shadow:0 1px 0 rgba(0,0,0,0.3);
+  }
+}
+//====== STATES
+@each $button-type in next, checkout {
+  .btn-#{$button-type} {
+    &.is-inactive {
+      background-color: $color-btn--disabled;
+      cursor: default;
+      color: $color-ic--midlightgrey;
+      .fa-chevron-right {
+        color: $color-ic--midlightgrey;
+      }
+      &:hover{
+        box-shadow: $box-shadow--panel;
+        text-decoration: none;
+      }
+      a, a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

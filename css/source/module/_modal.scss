@@ -1,0 +1,83 @@
+// modifying TBS' modal implementation
+
+//  <div class="modal">
+//    <h2 class="modal-header">Modal Header</h2>
+//      <div class="modal-body">
+//          <p>...content...<p>
+//      </div>
+//      <div class="modal-actions">
+//          <a ng-click="$dismiss()" class="btn--act">OK!</a>
+//      </div>
+//  </div>
+.modal {
+    @extend %panel;
+    top:40%;
+    padding:10px 20px 20px 20px;
+    box-shadow:$box-shadow--panel;
+    position: absolute;
+}
+.modal-header {
+    font-size:20px;
+    line-height:17px;
+    border-bottom:1px solid $color-ic--superlightgrey;
+    padding:9px 15px 9px 0;
+}
+.modal-body {}
+.modal-actions, .modal--actions {
+    text-align: right;
+}
+
+.modal-actions--single {
+    @extend .modal-actions;
+    text-align: center;
+}
+
+.modal--list {
+    @extend .modal;
+    width: 960px;
+    margin-left: -495px;
+}
+
+.modal--alert {
+    @extend .modal;
+    width: 500px;
+    margin-left: -250px;
+}
+
+
+.modal-open .dropdown-menu {
+  z-index: 2050;
+}
+
+.modal-body .find-result {
+    padding:3px 5px;
+    &:hover {
+        cursor:pointer;
+        background:$color-btn--act;
+        color:lighten($color-btn--act, 30);
+    }
+    &:nth-child(even) {
+        background:$bgcolor-panel--light;    
+        &:hover {
+            cursor:pointer;
+            background:$color-btn--act;
+            color:lighten($color-btn--act, 30);
+        }
+    }    
+}
+
+.modal--file {
+    @extend .modal;
+    width: 960px;
+    margin-left: -495px;
+    .unvalidated {
+      background:lighten(desaturate($color-ic--yellow, 25), 5);
+
+    }
+    .error {
+      background:lighten(desaturate($color-ic--orange, 20), 10);
+    }
+}
+.modal .upload-controls input {
+    max-width:530px;
+}

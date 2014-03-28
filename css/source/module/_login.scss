@@ -1,0 +1,67 @@
+$color-theme--dark:#222 !default;
+$logo-image:url('http://placehold.it/100&text=logo') !default;
+
+.login {
+  margin:0;
+  @extend %panel;
+  padding-top:$gutter;
+  padding-bottom:40px;
+  padding-left: 50%;
+  background-image: url("images/subway_marquee.jpg");
+  background-position:0 -20px;
+  background-repeat:no-repeat;
+  background-size:100%; 
+  #{$all-text-inputs} {
+    display:inline-block;
+    width:100%;
+  }
+}
+.login__help{
+  float: right;
+  color:$color-ic--midlightgrey;
+}
+.login__actions {
+  @extend %cleared;
+  width:100%;
+  .btn--act {
+    float:right;
+  }
+}
+.login__toggle {
+  text-align: right;
+  margin:7px 0;
+  .toggle--switch{
+    display: inline-block;
+    width: 100px; 
+  }
+}
+.login-remember{
+  display: inline-block;
+  vertical-align: top;
+  font-weight:$font-weight--regular;
+  color:$color-ic--midlightgrey;
+  margin:3px 5px 0 0;
+}
+.login__error {
+  color:$color-form--error;
+}
+
+.login-header {
+  @extend %cleared;
+  background:$color-theme--dark;
+  margin:0;
+  padding:5px;
+  .header-text {  
+    font-size:15px;
+    color:$color-ic--white;
+    float: left;
+    margin-left:15px;
+  }
+
+  .logo {
+    float: left;
+    width:152px;
+    height:44px;
+    background:$logo-image no-repeat;
+  }
+}

@@ -1,0 +1,14 @@
+//=================================================================		Dev Dependencies
+// Set the following URL to point to your Bourbon library
+@import "../../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+
+//================================================================= 	Core Library Dependencies
+//We start with Normalizer as our foundation. 
+//Point the following at your normalizer component:
+@import "../../../bower_components/normalize-css/normalize.css";
+
+@import "_mixins";
+@import "_vars";
+@import "_extends";
+@import "_base"; 
+@import "_states";

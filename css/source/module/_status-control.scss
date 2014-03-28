@@ -1,0 +1,142 @@
+.order__status-control {
+	float: right;
+}
+.status-control {
+}
+.status--current {
+	font-size:10px;
+}
+.status-control-states  {
+	position: relative;
+	@extend %cleared;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li:first-child {
+		border-radius: $border-radius--panel 0 0 0;
+	}
+	li:last-child {
+		border-radius:0 $border-radius--panel 0 0;
+	}
+}
+%message {
+	position:absolute;
+	top:-14px;
+	z-index:5;
+	padding-top:2px;
+	border-radius:$border-radius--panel  $border-radius--panel 0 0;
+	left:0;
+	height:16px;
+	width:100%;
+	opacity:0.0;
+	overflow:none;
+	color:#fefefe;
+	background:$color-ic--darkgrey;
+	font-size:12px;
+	line-height: 14px;
+
+}
+
+.status {
+	float:left;
+	background:$color-ic--superlightgrey;
+	padding:1px 6px;
+	width:25%;
+	text-align: center;
+	&:after {
+		@extend %message;	
+	}
+	&:hover{
+		&:after {
+			opacity:1;
+			@include transition(all 0.08s ease-out);
+		}
+	}
+	.fa {
+		font-size:15px;
+		color:$color-ic--midlightgrey;
+	}
+}
+.status.is-complete {
+	background:$color-ic--darkgrey;
+	.fa {
+		color:#54d5e0; 
+	}
+}
+.status.is-waiting {
+	background:$color-btn--act;
+	.fa {
+		color:lighten($color-btn--act, 70);
+	}
+}
+
+
+.status--approve {
+	@extend .status;
+	&:after {
+		content:"Pending";
+	}
+	&.is-complete {
+		&:after {
+			content:"Approved";
+		}
+	}
+}
+.status--pay {
+	@extend .status;
+	&:after {
+		content:"Unpaid";
+	}
+	&.is-complete {
+		&:after {
+			content:"Paid";
+		}
+	}
+}
+.status--fullfill {
+	@extend .status;
+	&:after {
+		content:"Unfullfilled";
+	}
+	&.is-complete {
+		&:after {
+			content:"Fullfilled";
+		}
+	}	
+}
+.status--activate {
+	@extend .status;
+	&:after {
+		content:"Inactive";
+	}
+	.fa-star {
+		display:none;
+	}
+	&.is-complete {
+		.fa-star-o {
+			display:none;
+		}
+		.fa-star {
+			color:#ffd174;
+			display:inline-block;
+		}
+		&:after {
+			content:"Active";
+		}
+	}
+}
+.status-actions {
+	text-align: center;
+	line-height:15px;
+	background:$color-ic--lightgrey;
+	border-radius:0 0 $border-radius--panel $border-radius--panel;
+}
+.status-action {
+	width:100%;
+	padding:2px 8px;
+	font-size:13px;
+	border-radius:0 0 $border-radius--panel $border-radius--panel;
+}
+.status-action--paid {
+	@extend .status-action;
+}

@@ -1,0 +1,35 @@
+$background-image--theme: none !default;
+
+//This file should only set standards for base html tags
+
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
+body {
+  font-family:$font-body;
+  background: $background-image--theme no-repeat center center fixed; 
+  background-size:cover;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family:$font-header;
+}
+
+a {
+  cursor:pointer;
+  color:$color-ic--blue;
+  text-decoration:none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+section {
+  @extend %cleared;
+}
+
+//reset lists because we typically don't utilize them in their default way. See Extends for normal lists
+ul, ol {
+  margin:0;
+  padding:0;
+  list-style: none;
+}

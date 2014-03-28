@@ -1,0 +1,16 @@
+.container {
+  @include box-sizing(border-box);
+  width:100%;
+  max-width:950px;
+  padding:0 20px;
+  @include breakpoint(wide) {
+    width:950px;
+    margin:0 auto;
+  }
+  @include breakpoint(small) {
+    padding:0 5px;
+  }
+  @include breakpoint(mobile) {
+    padding:0 3px;
+  }
+}
