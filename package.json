@@ -1,13 +1,11 @@
 {
-  "name": "Lauren Kodai",
+  "name": "design-lk",
   "description": "",
   "version": "0.0.1",
   "author": "Lauren Kodai",
   "private": true,
   "devDependencies": {
     "node-bourbon": "~1.0.0",
-    "grunt-contrib-sass": "~0.7.2",
-    "grunt-preprocess": "~4.0.0",
     "gulp": "^3.5.5",
     "gulp-util": "^2.2.14",
     "gulp-notify": "^1.0.0-beta",
